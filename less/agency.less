@@ -1,0 +1,453 @@
+@import "variables.less";
+@import "mixins.less";
+
+// Global Components
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    .body-font;
+}
+
+.text-muted {
+    color: @gray;
+    margin-bottom: 30px;
+}
+
+.text-primary {
+    color: @brand-primary;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+    .large {
+        font-size: 16px;
+    }
+}
+
+
+a {
+    color: @brand-primary;
+    outline: none;
+    &:hover,
+    &:focus,
+    &:active,
+    .active {
+        outline: none;
+        color: darken(@brand-primary, 10%);
+    }
+
+}
+
+
+.img-centered {
+    margin: 0 auto;
+}
+
+.bg-light-gray {
+    background-color: @gray-lighter;
+}
+
+.bg-darkest-gray {
+    background-color: @gray-darkest;
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {
+    .button-variant(white; @brand-primary; @brand-primary);
+    .heading-font;
+    font-weight: 700;
+}
+
+.btn-xl {
+    .button-variant(white; @brand-primary; @brand-primary);
+    .heading-font;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+// Custom Navigation Bar
+
+.navbar-default {
+    background-color: @gray-darkest;
+    border-color: transparent;
+    .navbar-brand {
+        color: @brand-primary;
+        .script-font;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: darken(@brand-primary, 10%);
+        }
+    }
+    .navbar-collapse {
+        border-color: fade(white, 2%);
+    }
+    .navbar-toggle {
+        background-color: @brand-primary;
+        border-color: @brand-primary;
+        .icon-bar {
+            background-color: white;
+        }
+        &:hover,
+        &:focus {
+            background-color: @brand-primary;
+        }
+    }
+    .nav {
+        li {
+            a {
+                .heading-font;
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: @brand-primary;
+                &:focus {
+                    color: white;
+                    outline: none;
+                }
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        color: white;
+        background-color: @brand-primary;
+    }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: white;
+        background-color: darken(@brand-primary, 10%);
+    }
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        background-color: transparent;
+        padding: 25px 0;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;
+        border: none;
+        .navbar-brand {
+            font-size: 2em;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .navbar-nav>.active>a {
+            border-radius: 3px;
+        }
+    }
+    .navbar-default.navbar-shrink {
+        background-color: @gray-darkest;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }    
+    }
+}
+
+header {
+    min-height: 100%;
+    width: 100%;
+    display: table;
+    background-image: url('https://s3-sa-east-1.amazonaws.com/portfolio-esteb.co/bg3.jpg');
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    .background-cover;
+    text-align: center;
+    color: white;
+    .intro-text {
+        display: table-cell;
+        background-color: rgba(0,0,0,0.6);
+        transition: background-color 0.4s ease;
+        h1{
+          font-family: 'Raleway';
+          text-shadow: 1px 1px 5px black;
+          font-weight: 900;
+          color: white;
+        }
+    }
+}
+
+@media(min-width:768px) {
+    header {
+        .intro-text {
+            .intro-lead-in {
+                .serif-font;
+                font-style: italic;
+                font-size: 40px;
+                line-height: 40px;
+                margin-bottom: 25px;
+            }
+            .intro-heading {
+                .heading-font;
+                font-weight: 700;
+                font-size: 75px;
+                line-height: 75px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px){
+    header {
+        .intro-text {
+            h1{
+                font-size: -webkit-xxx-large;
+            }
+        }
+    }
+}
+
+@media(min-width:1024px) {
+    header {
+        .intro-text {
+            padding-top: 20%;
+        }
+    }
+}
+
+/*About*/
+
+.about{
+    padding: 80px 0;
+    img{
+        content: url(https://s3-sa-east-1.amazonaws.com/portfolio-esteb.co/me2.jpg);    
+    }
+    .p-description{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 400px;    
+    }
+}
+
+/*Global Section Styles*/
+
+section {
+    padding: 100px 0;
+    h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    h3.section-subheading {
+        font-size: 16px;
+        .serif-font;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 75px;
+    }
+}
+
+@media(min-width:768px) {
+    section {
+        padding: 150px 0;
+    }
+}
+
+// Services Section
+
+.service-heading {
+    margin: 15px 0;
+    text-transform: none;
+}
+
+
+@media(min-width:767px) {
+    #services .fa-stack {
+        font-size: 6em;
+    }
+    .service-heading{
+        font-size: 24px !important; 
+    }
+}
+
+// Portfolio Section
+
+#portfolio {
+    padding: 50px !important;
+    .portfolio-item {
+        margin: 0 0 15px;
+        right: 0;
+        .portfolio-link {
+            display: block;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            .portfolio-hover {
+                background: fade(@brand-primary, 90%);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all ease 0.5s;
+                -webkit-transition: all ease 0.5s;
+                -moz-transition: all ease 0.5s;
+                &:hover {
+                    opacity: 1;
+                }
+                .portfolio-hover-content {
+                    position: absolute;
+                    width: 100%;
+                    height: 20px;
+                    font-size: 20px;
+                    text-align: center;
+                    top: 50%;
+                    margin-top: -12px;
+                    color: white;
+                    i {
+                        margin-top: -12px;
+                    }
+                    h3,
+                    h4 {
+                        margin: 0;
+                    }
+                }                
+            }            
+        }
+        .portfolio-caption {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            text-align: center;
+            padding: 25px;
+            h4 {
+                text-transform: none;
+                margin: 0;
+            }
+            p {
+                .serif-font;
+                font-style: italic;
+                font-size: 16px;
+                margin: 0;
+            }
+        }
+    }
+    * {
+        z-index: 2;
+    }
+}
+
+@media(max-width:767px) {
+    #portfolio {
+        padding: 75px 0 !important;
+    }
+}
+
+@media(min-width:767px) {
+    #portfolio {
+        .portfolio-item {
+            margin: 0 0 30px;
+        }
+    }
+}
+
+// Clients Aside
+
+aside.clients {
+    img {
+        margin: 50px auto;
+    }
+}
+
+// Contact Section
+
+section#contact {
+    background-color: @gray-darkest;
+    background-image: url('../img/map-image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    .section-heading {
+        color: white;
+    }
+    .form-group {
+        margin-bottom: 25px;
+        input,
+        textarea {
+            padding: 20px;
+        }
+        input.form-control {
+            height: auto;
+        }
+        textarea.form-control {
+            height: 236px;
+        }
+    }
+    .form-control:focus {
+        border-color: @brand-primary;
+        box-shadow: none;
+    }
+    ::-webkit-input-placeholder {
+        .heading-font;
+        font-weight: 700;
+        color: @placeholder-text;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        .heading-font;
+        font-weight: 700;
+        color: @placeholder-text;
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+        .heading-font;
+        font-weight: 700;
+        color: @placeholder-text;
+    }
+    :-ms-input-placeholder {  
+        .heading-font;
+        font-weight: 700;
+        color: @placeholder-text;
+    }
+    .text-danger {
+        color: @brand-danger;
+    }
+}
+
+
+/* Footer */
+
+footer {
+    background-color: yellowgreen;
+
+    padding: 50px 0;
+    text-align: right;
+    h1{
+        text-align: right;
+    }
+    ul{
+        text-align: end;
+        .linkedin{
+          content: url(https://s3-sa-east-1.amazonaws.com/portfolio-esteb.co/icons/linkedin.png);
+        }
+        .github{
+          content: url(https://s3-sa-east-1.amazonaws.com/portfolio-esteb.co/icons/github.png);
+        }
+        .twitter{
+          content: url(https://s3-sa-east-1.amazonaws.com/portfolio-esteb.co/icons/twitter.png);
+        }
+        .facebook{
+          content: url(https://s3-sa-east-1.amazonaws.com/portfolio-esteb.co/icons/facebook.png);
+        }
+        .instagram{
+          content: url(https://s3-sa-east-1.amazonaws.com/portfolio-esteb.co/icons/instagram.png);
+        }
+    }
+
+}
+
