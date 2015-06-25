@@ -242,9 +242,6 @@ header .intro-text h1 {
   }
 }
 @media (min-width: 769px) {
-  header .intro-text {
-    padding-top: 25%;
-  }
   header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: italic;
