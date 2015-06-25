@@ -236,6 +236,11 @@ header .intro-text h1 {
   font-weight: 900;
   color: white;
 }
+@media (max-width: 768px) {
+  header .intro-text {
+    padding-top: 50%;
+  }
+}
 @media (min-width: 768px) {
   header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
