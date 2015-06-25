@@ -183,9 +183,18 @@ header {
     }
 }
 
-@media(min-width:768px) {
+@media(max-width: 768px) {
     header {
         .intro-text {
+            padding-top: 50%;
+        }
+    }
+}
+
+@media(min-width:769px) {
+    header {
+        .intro-text {
+            padding-top: 25%;
             .intro-lead-in {
                 .serif-font;
                 font-style: italic;
@@ -213,14 +222,14 @@ header {
         }
     }
 }
-
+/*
 @media(min-width:1024px) {
     header {
         .intro-text {
-            padding-top: 20%;
+            padding-top: 25%;
         }
     }
-}
+}*/
 
 /*About*/
 
